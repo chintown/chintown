@@ -12,8 +12,8 @@
     // display title of html page
     $TITLE_PAGE = $site_caped;
     // meta tags
-    $KEYWORDS = ''.SITE_CODE;
-    $DESCRIPTION = '___DESCRIPTION___';
+    $KEYWORDS = '';
+    $DESCRIPTION = 'Mike Chen (@chintown) is a web developer.';
     $HOME_LOGO = ''; // url
     // prefix of browser title shows the current page
     $NAV_DICT = array(
