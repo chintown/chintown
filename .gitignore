@@ -1,0 +1,24 @@
+### Project specific
+config/pw.php
+htdoc/js/*.min.js
+htdoc/css
+script/less/bootstrap/tests
+script/less/*.css
+
+### Editor specific
+# PhPStorm specific
+.idea/
+
+# SublimeText specific
+*.sublime-workspace
+*.sublime-project
+
+## Vim specific
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
+### OS specific
+## Mac specific
+.DS_Store
