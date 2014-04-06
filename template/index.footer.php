@@ -14,6 +14,6 @@ if (DEV_MODE) { ?>
         <script src="<?=WEB_PATH?>/js/index.pack.min.js" type="text/javascript"></script>
 <?php } ?>
         <?php
-echo serialize_vars_as_js(array(
-));
+//echo serialize_vars_as_js(array(
+//));
 ?>
