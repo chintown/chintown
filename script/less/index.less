@@ -1,15 +1,31 @@
 @import "common.main.inc.less";
 
-
-.navbar {
-  .hide;
-}
-
 #content {
   max-width: 500px;
   width: auto;
 }
 
+#index {
+  max-width: 500px;
+  max-height: 200px;
+  .l-center;
+}
+@media (max-width: 767px) {
+  #index {
+    bottom: auto;
+  }
+}
+
+#name {
+  font-family: 'Alegreya SC', serif;
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+#description {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 .portrait {
+  margin-top: 10px;
   padding: 10px 20px;
 }
