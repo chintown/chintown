@@ -9,7 +9,7 @@
 <div id="index" class="row-fluid">
     <div class="span8 text-center">
         <h1 id="name"><a href="<?=WEB_ROOT?>">Mike Chen</a></h1>
-        <p id="description">I make <a href="">homemade things</a> <br>and explore <a href="">hidden joys</a>.</p>
+        <p id="description">I make <a href="">homemade things</a> <br>and explore <a href="https://www.flickr.com/photos/chintown/sets/72157632408730031/">hidden joys</a>.</p>
     </div>
     <div class="span4 portrait">
         <img src="img/portrait.png" alt="self-portrait"/>
