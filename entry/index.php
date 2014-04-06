@@ -9,12 +9,6 @@
 <div id="index">
 </div>
 
-<div id="wrap_template">
-<?php
-    //require 'template/crud.php';
-    //require 'template/index.crud.php';
-?>
-</div>
 <?php
     add_extra_footer('index.footer.php');
     require 'template/footer.php';
