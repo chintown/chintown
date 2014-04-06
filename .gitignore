@@ -17,7 +17,6 @@ script/less/*.css
 .*.sw[a-z]
 *.un~
 Session.vim
-.netrwhist
 
 ### OS specific
 ## Mac specific
