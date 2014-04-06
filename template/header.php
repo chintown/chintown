@@ -21,7 +21,9 @@
 
     <link rel="stylesheet" href="<?=$ENTRY_CSS?>">
     <link rel="stylesheet" href="<?=PARENT_WEB_PATH?>/css/reset.boilerplate.css">
-    <link rel="stylesheet" href="<?=PARENT_WEB_PATH?>/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="--><?//=PARENT_WEB_PATH?><!--/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="<?=PARENT_WEB_PATH?>/css/bootstrap.precompile.css">
+    <link rel="stylesheet" href="<?=PARENT_WEB_PATH?>/css/bootstrap-responsive.precompile.css">
     <link rel="stylesheet" href="<?=PARENT_WEB_PATH?>/css/font-awesome.css">
     <link rel="stylesheet" href="<?=PARENT_WEB_PATH?>/css/webfont.css">
     <script src="<?=PARENT_WEB_PATH?>/js/vendor/modernizr-2.6.1.min.js"></script>
