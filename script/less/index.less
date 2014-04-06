@@ -10,9 +10,9 @@
   .l-center;
   max-height: 30%;
 }
-@media (max-width: 767px) {
-  #index {
-    bottom: auto;
+@media (max-width:767px) {
+  .page .wrapper {
+    max-height: 90%;
   }
 }
 
@@ -27,5 +27,13 @@
 }
 .portrait {
   margin-top: 10px;
-  padding: 10px 20px;
+  text-align: center;
+}
+
+@media (max-width:767px) {
+  .portrait {
+    img {
+      max-height: 50%;
+    }
+  }
 }
