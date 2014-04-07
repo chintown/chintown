@@ -6,9 +6,9 @@
     //require 'core/authentication.php';
 ?>
 
-<div id="index" class="row-fluid">
+<div id="index" class="">
     <div class="page">
-        <div class="wrapper">
+        <div class="wrapper row-fluid">
             <div class="span8 text-center">
                 <h1 id="name"><a href="<?=WEB_ROOT?>">Mike Chen</a></h1>
                 <p id="description">I make <a href="">homemade things</a> <br>and explore <a href="https://www.flickr.com/photos/chintown/sets/72157632408730031/">hidden joys</a>.</p>
@@ -18,6 +18,21 @@
             </div>
         </div>
     </div>
+    <?php
+        foreach ($r_projects as $project) {
+    ?>
+    <div class="page">
+        <div class="wrapper row-fluid">
+            <?=(empty($project['url']) ? '' : '<a href="'.$project['url'].'">')?>
+            <h2 class="project-title"><?=$project['title']?></h2>
+            <?=(empty($project['url']) ? '' : '</a>')?>
+            <h3 class="project-slogan"><small> — <?=$project['slogan']?></small></h3>
+            <p class="project-description"><?=$project['description']?></p>
+        </div>
+    </div>
+    <?php
+        }
+    ?>
 </div>
 
 <?php
