@@ -19,11 +19,39 @@ function initOnePageScrolling() {
         // the browser's width is less than 600, the fallback will kick in.
     });
 }
+function initPageControl() {
+    $('#page_control')
+        .css('width', $(window).height() * 0.7)
+        .attr('max', $('.page').length)
+        .val(parseInt(window.location.hash.replace('#', ''), 10))
+        .on('change', function() {
+            var page = parseInt($(this).val(), 10);
+            $("#index").moveTo(page);
+        })
+        .on('touchstart', function () {
+            $(this).addClass('active');
+        })
+        .on('touchend', function () {
+            $(this).removeClass('active');
+        })
+        ;
+    $('#controls')
+        .css({
+            bottom: 0 + $(window).height() / 2,
+            right: 0 - $('#page_control').width() / 2 + 40
+        })
+        ;
+    if (IS_MOBILE) {
+        $('#controls').show();
+        $('.onepage-pagination').hide();
+    }
+}
 function bindEvents() {
     de.time();
 }
 function init() {
-    initOnePageScrolling()
+    initOnePageScrolling();
+    initPageControl();
     bindEvents();
     de.time('INITIALIZATION DONE');
 }

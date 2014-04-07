@@ -35,6 +35,10 @@
     ?>
 </div>
 
+<div id="controls">
+    <input id="page_control" type="range" min="1"/>
+</div>
+
 <?php
     add_extra_footer('index.footer.php');
     require 'template/footer.php';

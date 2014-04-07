@@ -1,4 +1,5 @@
 @import "common.main.inc.less";
+@import "bootstrap.precompile/bootstrap-responsive.less";
 @import (less) "../css/onepage-scroll.css";
 
 #content {
@@ -57,4 +58,35 @@
   line-height: 1.9rem;
 
   padding-right: 10px;
+}
+
+#controls {
+  position: fixed;
+
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+
+  display: none; // only show for mobile
+}
+#page_control {
+  -webkit-appearance: none;
+  background-color: transparent;
+  height: 1px;
+}
+#page_control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border-color: #d3d3d3;
+  border-width: 1px;
+  @size: 40px;
+  width: @size;
+  height: @size;
+  .radius(@size);
+}
+#page_control.active {
+  background-color: #d3d3d3;
+}
+#page_control.active::-webkit-slider-thumb {
+  border-color: #d3d3d3;
 }
