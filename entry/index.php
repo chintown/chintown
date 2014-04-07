@@ -28,6 +28,8 @@
             <?=(empty($project['url']) ? '' : '</a>')?>
             <h3 class="project-slogan"><small> — <?=$project['slogan']?></small></h3>
             <p class="project-description"><?=$project['description']?></p>
+
+            <div class="project-media" data-url="<?=WEB_ROOT.'/img/'.$project['media']?>"></div>
         </div>
     </div>
     <?php

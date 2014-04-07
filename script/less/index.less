@@ -60,6 +60,39 @@
   padding-right: 10px;
 }
 
+@shadow: inset 0px 0px 80px 50px white, 0px 0px 80px 50px white;
+.project-media {
+  width: 400px;
+  height: 300px;
+  .radius(300px);
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  //-webkit-filter: blur(2px) grayscale(0.4); //  brightness(50%)
+
+  -moz-box-shadow:@shadow;
+  -webkit-box-shadow:@shadow;
+  box-shadow:@shadow;
+
+  z-index: -1;
+}
+.project-media:before {
+  content: ' ';
+  width: 400px;
+  height: 300px;
+  .radius(300px);
+
+  position: absolute;
+  top: -1px;
+  left: -1px;
+
+  -moz-box-shadow:@shadow;
+  -webkit-box-shadow:@shadow;
+  box-shadow:@shadow;
+}
+
 #controls {
   position: fixed;
 

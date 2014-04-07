@@ -46,12 +46,24 @@ function initPageControl() {
         $('.onepage-pagination').hide();
     }
 }
+function initMedia() {
+    $('.project-media').each(function(idx, media) {
+        var $media = $(media);
+        $media.css({
+            'backgroundImage': 'url('+$media.attr('data-url')+')',
+            'backgroundSize': 'cover',
+            'backgroundPosition': 'center center',
+            'backgroundRepeat': 'no-repeat'
+        });
+    });
+}
 function bindEvents() {
     de.time();
 }
 function init() {
     initOnePageScrolling();
     initPageControl();
+    initMedia();
     bindEvents();
     de.time('INITIALIZATION DONE');
 }
