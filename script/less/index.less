@@ -129,10 +129,20 @@
   width: @size;
   height: @size;
   .radius(@size);
+
+  @ring-color: #d3d3d3; //rgba(255,255,255, 1);
+  @ring-size-start: 0px;
+  @ring-end-start: 8px;
+  @-webkit-keyframes breath {
+    0%   { -webkit-box-shadow: 0 0 @ring-size-start @ring-size-start @ring-color; }
+    50%   { -webkit-box-shadow: 0 0 @ring-end-start @ring-end-start @ring-color; }
+    100%   { -webkit-box-shadow: 0 0 @ring-size-start+1px @ring-size-start+1px @ring-color; }
+  }
+  -webkit-animation: breath 4s infinite ease-in-out;
 }
-#page_control.active {
-  background-color: #d3d3d3;
-}
-#page_control.active::-webkit-slider-thumb {
-  border-color: #d3d3d3;
-}
+//#page_control.active {
+//  background-color: #d3d3d3;
+//}
+//#page_control.active::-webkit-slider-thumb {
+//  border-color: #d3d3d3;
+//}
