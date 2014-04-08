@@ -27,7 +27,7 @@ function initPageControl() {
     $pageControl
         .css('width', $(window).height() * 0.7)
         .attr('max', $('.page').length)
-        .val(parseInt(window.location.hash.replace('#', ''), 10))
+        .val(parseInt(window.location.hash.replace(/^$/, '#1').replace('#', ''), 10))
         .on('change', function() {
             var page = parseInt($(this).val(), 10);
             $("#index").moveTo(page);
