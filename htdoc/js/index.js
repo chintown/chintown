@@ -53,7 +53,10 @@ function initMedia() {
             'backgroundImage': 'url('+$media.attr('data-url')+')',
             'backgroundSize': 'cover',
             'backgroundPosition': 'center center',
-            'backgroundRepeat': 'no-repeat'
+            'backgroundRepeat': 'no-repeat',
+
+            'right': -1 * $media.width() / 2,
+            'bottom': -1 * $media.height() / 2
         });
     });
 }
