@@ -25,7 +25,8 @@ function initPageControl() {
     var $controls = $('#controls'),
         $pageControl = $('#page_control');
     $pageControl
-        .css('width', $(window).height() * 0.7)
+//        .css('width', $(window).height() * 0.7) // vertical_bar
+        .css('width', $(window).width() * 0.8) // horizontal_bar
         .attr('max', $('.page').length)
         .val(parseInt(window.location.hash.replace(/^$/, '#1').replace('#', ''), 10))
         .on('change', function() {
@@ -41,8 +42,10 @@ function initPageControl() {
         ;
     $controls
         .css({
-            bottom: 0 + $(window).height() / 2,
-            right: 0 - $pageControl.width() / 2 + 40
+//            bottom: 0 + $(window).height() / 2, // vertical_bar
+//            right: 0 - $pageControl.width() / 2 + 40 // vertical_bar
+            bottom: 50, // horizontal_bar
+            left: '10%' // horizontal_bar
         })
         ;
     if (IS_MOBILE) {
