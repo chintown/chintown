@@ -106,4 +106,11 @@ function init() {
 }
 $(document).ready(function() {
     init();
+
+    enableProjectPages(); // avoid FOUC
+    if (window.location.hash === '') {
+        controller.trigger('landOnHome');
+    } else {
+        controller.trigger('landOnPage');
+    }
 });
