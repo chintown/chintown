@@ -41,6 +41,8 @@
     <input id="page_control" type="range" min="1"/>
 </div>
 
+<div id="mask"></div>
+
 <?php
     add_extra_footer('index.footer.php');
     require 'template/footer.php';

@@ -148,9 +148,37 @@
   }
   -webkit-animation: breath 4s infinite ease-in-out;
 }
-//#page_control.active {
-//  background-color: #d3d3d3;
-//}
-//#page_control.active::-webkit-slider-thumb {
-//  border-color: #d3d3d3;
-//}
+
+#mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: -2;
+}
+
+.control-activated {
+  @zindex: 999999;
+  #mask {
+    display: block;
+    z-index: @zindex;
+  }
+  .project-title,
+  #controls {
+    z-index: @zindex+1;
+  }
+
+  #controls {
+    -webkit-box-shadow: 0 0 120px 50px white;
+    padding-right: 0px; // reset
+  }
+  #page_control {
+    background-color: @control-color;
+  }
+  #page_control::-webkit-slider-thumb {
+    -webkit-animation: none;
+  }
+}
