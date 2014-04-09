@@ -127,7 +127,7 @@
   display: none; // only show for mobile
 }
 @control-color: #d3d3d3;
-@activated-control-color: #ffffff;
+@activated-control-color: #dfdfdf;
 #page_control {
   -webkit-appearance: none;
   background-color: transparent;
@@ -137,7 +137,7 @@
   -webkit-appearance: none;
   background-color: transparent;
   border-color: @control-color;
-  border-width: 1px;
+  border-width: 2px;
   @size: 40px;
   width: @size;
   height: @size;
@@ -184,7 +184,7 @@
     background-color: @activated-control-color;
   }
   #page_control::-webkit-slider-thumb {
-    border-color: @activated-control-color;
+    -webkit-box-shadow: 0 0 1px 1px @activated-control-color;
     -webkit-animation: none;
   }
 }
