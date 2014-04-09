@@ -10,9 +10,11 @@ function initOnePageScrolling() {
         animationTime: 500,              // AnimationTime let you define how long each section takes to animate
         pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
         updateURL: true,                 // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-        beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
+        beforeMove: function(index) {    // This option accepts a callback function. The function will be called before the page moves.
+            //de.time('beforeMove', index);
+        },
         afterMove: function(index) {     // This option accepts a callback function. The function will be called after the page moves.
-            $('#page_control').val(parseInt(window.location.hash.replace('#', ''), 10))
+            //de.time('afterMove', index);
         },
         loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
         keyboard: true,                  // You can activate the keyboard controls
