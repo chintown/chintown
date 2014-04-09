@@ -1,6 +1,28 @@
 // "use strict";
 
+function enableProjectPages() {
+    $('.page').show();
+}
+function enableControls() {
+    $('#controls').show();
+}
+function activateControls() {
+    $('html').addClass('control-activated');
+}
 // -----
+function initModels() {
+    window.controller = $.observable({});
+
+    controller.on('landOnHome', function () {
+    });
+    controller.on('landOnPage', function () {
+        enableControls();
+    });
+    controller.on('enterProjects', function () {
+        enableControls();
+        setTimeout(activateControls, 800);
+    });
+}
 function initOnePageScrolling() {
     // https://github.com/peachananr/onepage-scroll
     $("#index").onepage_scroll({
@@ -73,6 +95,7 @@ function bindEvents() {
     de.time();
 }
 function init() {
+    initModels();
     initOnePageScrolling();
     initMobilePageControl();
     initMedia();
