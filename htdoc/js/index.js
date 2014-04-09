@@ -1,5 +1,8 @@
 // "use strict";
 
+function getCurrentPageFromHash() {
+    return parseInt(window.location.hash.replace(/^$/, '#1').replace('#', ''), 10);
+}
 function enableProjectPages() {
     $('.page').show();
 }
@@ -35,9 +38,15 @@ function initModels() {
             enableControls();
             setTimeout(activateControls, 800);
         } else {
-            $("#index").moveTo(2);
+            $("#index").moveTo(2); // first project
         }
     });
+    controller.on('switchToPage', function (page) { // starts from 1
+        if (IS_MOBILE) {
+            updateNavigationHints(page);
+            $("#index").moveTo(page);
+        }
+    })
 }
 function initOnePageScrolling() {
     // https://github.com/peachananr/onepage-scroll
@@ -54,13 +63,7 @@ function initOnePageScrolling() {
         afterMove: function(index) {     // This option accepts a callback function. The function will be called after the page moves.
             //de.time('afterMove', index);
             index = parseInt(index, 10);
-            $('#page_control').val(parseInt(window.location.hash.replace(/^$/, '#1').replace('#', ''), 10));
-
-            var titles = $('.project-title');de.log(titles.get(199));
-            var prev = titles.get(index-2-1) ? '← ' + $(titles.get(index-2-1)).text() : '';
-            var next = titles.get(index-2+1) ? $(titles.get(index-2+1)).text() + ' →' : '';
-            $('#page_control').attr('data-prev', prev);
-            $('#page_control').attr('data-next', next);
+            $('#page_control').val(getCurrentPageFromHash());
         },
         loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
         keyboard: true,                  // You can activate the keyboard controls
@@ -76,10 +79,10 @@ function initMobilePageControl() {
 //        .css('width', $(window).height() * 0.7) // vertical_bar
         .css('width', $(window).width() * 0.8) // horizontal_bar
         .attr('max', $('.page').length)
-        .val(parseInt(window.location.hash.replace(/^$/, '#1').replace('#', ''), 10))
+        .val(parseInt(getCurrentPageFromHash()))
         .on('change', function() {
-            var page = parseInt($(this).val(), 10);
-            $("#index").moveTo(page);
+            var page = parseInt($(this).val(), 10); // starts from 1
+            controller.trigger('switchToPage', page);
         })
         .on('touchstart', function () {
             $('html').addClass('control-activated');
@@ -135,7 +138,7 @@ $(document).ready(function() {
     if (window.location.hash === '') {
         controller.trigger('landOnHome');
     } else {
-        controller.trigger('landOnPage');
+        controller.trigger('landOnPage', getCurrentPageFromHash());
     }
 
     //activateControls();
