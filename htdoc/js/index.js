@@ -128,5 +128,5 @@ $(document).ready(function() {
         controller.trigger('landOnPage');
     }
 
-    activateControls();
+    //activateControls();
 });
