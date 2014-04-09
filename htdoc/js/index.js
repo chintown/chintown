@@ -23,7 +23,7 @@ function initOnePageScrolling() {
         // the browser's width is less than 600, the fallback will kick in.
     });
 }
-function initPageControl() {
+function initMobilePageControl() {
     var $controls = $('#controls'),
         $pageControl = $('#page_control');
     $pageControl
@@ -74,7 +74,7 @@ function bindEvents() {
 }
 function init() {
     initOnePageScrolling();
-    initPageControl();
+    initMobilePageControl();
     initMedia();
     bindEvents();
     de.time('INITIALIZATION DONE');
