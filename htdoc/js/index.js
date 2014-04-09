@@ -75,7 +75,7 @@ function initMobilePageControl() {
         .css({
 //            bottom: 0 + $(window).height() / 2, // vertical_bar
 //            right: 0 - $pageControl.width() / 2 + 40 // vertical_bar
-            bottom: 50, // horizontal_bar
+            bottom: '80px', // horizontal_bar
             left: '10%' // horizontal_bar
         })
         ;
