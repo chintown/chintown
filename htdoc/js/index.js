@@ -27,6 +27,7 @@ function initModels() {
     window.controller = $.observable({});
 
     controller.on('landOnHome', function () {
+        updateNavigationHints(0);
     });
     controller.on('landOnPage', function (page) {
         if (IS_MOBILE) {
