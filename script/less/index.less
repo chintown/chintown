@@ -87,9 +87,7 @@
 
   -webkit-filter: blur(1px); // grayscale(0.1); // brightness(110%);
 
-  -moz-box-shadow:@shadow;
-  -webkit-box-shadow:@shadow;
-  box-shadow:@shadow;
+  .box-shadow(@shadow);
 
   z-index: -1;
 }
@@ -103,9 +101,7 @@
   top: -1px;
   left: -1px;
 
-  -moz-box-shadow:@shadow;
-  -webkit-box-shadow:@shadow;
-  box-shadow:@shadow;
+  .box-shadow(@shadow);
 }
 
 // -----------------------------------------------------------------------------
@@ -115,9 +111,7 @@
   position: fixed;
 
   // vertical_bar
-//  -moz-transform: rotate(90deg);
-//  -webkit-transform: rotate(90deg);
-//  transform: rotate(90deg);
+//  .transform(rotate(90deg));
 
   height: 0px;
   padding-right: 20px; // avoid ring to be cropped
@@ -147,9 +141,9 @@
   @ring-size-start: 1px;
   @ring-end-start: 8px;
   @-webkit-keyframes breath {
-    0%   { -webkit-box-shadow: 0 0 @ring-size-start @ring-size-start @ring-color; }
-    50%   { -webkit-box-shadow: 0 0 @ring-end-start @ring-end-start @ring-color; }
-    100%   { -webkit-box-shadow: 0 0 @ring-size-start @ring-size-start @ring-color; }
+    0%   { .box-shadow(0 0 @ring-size-start @ring-size-start @ring-color); }
+    50%   { .box-shadow(0 0 @ring-end-start @ring-end-start @ring-color); }
+    100%   { .box-shadow(0 0 @ring-size-start @ring-size-start @ring-color); }
   }
   -webkit-animation: breath 4s infinite ease-in-out;
 }
@@ -177,7 +171,7 @@
   }
 
   #controls {
-    -webkit-box-shadow: 0 0 50px 50px white;
+    .box-shadow(0 0 50px 50px white);
     padding-right: 0px; // reset
   }
   #page_control {
