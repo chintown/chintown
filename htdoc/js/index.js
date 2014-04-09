@@ -28,9 +28,10 @@ function initModels() {
 
     controller.on('landOnHome', function () {
     });
-    controller.on('landOnPage', function () {
+    controller.on('landOnPage', function (page) {
         if (IS_MOBILE) {
             enableControls();
+            updateNavigationHints(page);
         }
     });
     controller.on('enterProjects', function () {
