@@ -107,6 +107,16 @@
 // -----------------------------------------------------------------------------
 // controls
 
+@pager-color: gray;
+.onepage-pagination {
+  li a:before {
+    background-color: @pager-color;
+  }
+  li a.active:before {
+    border-color: @pager-color;
+  }
+}
+
 #controls {
   position: fixed;
 
