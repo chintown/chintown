@@ -58,10 +58,10 @@ function initMobilePageControl() {
             $("#index").moveTo(page);
         })
         .on('touchstart', function () {
-            $(this).addClass('active');
+            $('html').addClass('control-activated');
         })
         .on('touchend', function () {
-            $(this).removeClass('active');
+            $('html').removeClass('control-activated');
         })
         ;
     $controls
@@ -73,7 +73,6 @@ function initMobilePageControl() {
         })
         ;
     if (IS_MOBILE) {
-        $controls.show();
         $('.onepage-pagination').hide();
     }
 }
