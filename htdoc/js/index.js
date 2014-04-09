@@ -93,6 +93,9 @@ function initMedia() {
 }
 function bindEvents() {
     de.time();
+    $('#description a:nth-child(1)').click(function() {
+        controller.trigger('enterProjects');
+    });
 }
 function init() {
     initModels();
