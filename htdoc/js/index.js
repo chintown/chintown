@@ -27,7 +27,10 @@ function initModels() {
     window.controller = $.observable({});
 
     controller.on('landOnHome', function () {
-        updateNavigationHints(1);
+        if (IS_MOBILE) {
+            enableControls();
+            updateNavigationHints(1);
+        }
     });
     controller.on('landOnPage', function (page) {
         if (IS_MOBILE) {
@@ -37,8 +40,7 @@ function initModels() {
     });
     controller.on('enterProjects', function () {
         if (IS_MOBILE) {
-            enableControls();
-            setTimeout(activateControls, 800);
+            activateControls();
         } else {
             $("#index").moveTo(2); // first project
         }
