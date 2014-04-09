@@ -9,6 +9,16 @@ function enableControls() {
 function activateControls() {
     $('html').addClass('control-activated');
 }
+function updateNavigationHints(page) {
+    var idx = page - 1;
+    var pages = $('.page');
+    var prev = pages[idx - 1] ? '← ' + $(pages[idx - 1]).attr('data-title') : '';
+    var next = pages[idx + 1] ? $(pages[idx + 1]).attr('data-title') + ' →' : '';
+    var curr = $(pages[idx]).attr('data-title');
+    $('#page_control').attr('data-prev', prev);
+    $('#page_control').attr('data-next', next);
+    $('#controls').attr('data-curr', curr);
+}
 // -----
 function initModels() {
     window.controller = $.observable({});

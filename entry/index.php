@@ -7,7 +7,7 @@
 ?>
 
 <div id="index" class="">
-    <div class="page">
+    <div class="page" data-title="Mike Chen">
         <div class="wrapper row-fluid">
             <div class="span8 text-center">
                 <h1 id="name"><a href="<?=WEB_ROOT?>">Mike Chen</a></h1>
@@ -21,7 +21,7 @@
     <?php
         foreach ($r_projects as $project) {
     ?>
-    <div class="page">
+    <div class="page" data-title="<?=$project['title']?>">
         <div class="wrapper row-fluid">
             <?=(empty($project['url']) ? '' : '<a href="'.$project['url'].'">')?>
             <h2 class="project-title"><?=$project['title']?></h2>
