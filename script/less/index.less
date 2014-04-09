@@ -127,6 +127,7 @@
   display: none; // only show for mobile
 }
 @control-color: #d3d3d3;
+@activated-control-color: #ffffff;
 #page_control {
   -webkit-appearance: none;
   background-color: transparent;
@@ -180,9 +181,10 @@
     padding-right: 0px; // reset
   }
   #page_control {
-    background-color: @control-color;
+    background-color: @activated-control-color;
   }
   #page_control::-webkit-slider-thumb {
+    border-color: @activated-control-color;
     -webkit-animation: none;
   }
 }
