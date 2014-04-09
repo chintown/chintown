@@ -190,8 +190,30 @@
     background-color: @activated-control-color;
     -webkit-animation: none;
   }
-}
 
+  #page_control:before,
+  #page_control:after {
+    position: absolute;
+    .l-size-square(10px);
+    width: 70%;
+    font-size: 1.2rem;
+    color: white;
+  }
+  #page_control:before {
+    content: attr(data-prev) ' ';
+    //background-color: red;
+    left: 0;
+    text-align: left;
+    top: -100px;
+  }
+  #page_control:after {
+    content: attr(data-next) ' ';
+    //background-color: blue;
+    right: 0;
+    text-align: right;
+    top: -90px;
+  }
+}
 
 // -----------------------------------------------------------------------------
 // mobile initial

@@ -43,7 +43,14 @@ function initOnePageScrolling() {
         },
         afterMove: function(index) {     // This option accepts a callback function. The function will be called after the page moves.
             //de.time('afterMove', index);
+            index = parseInt(index, 10);
             $('#page_control').val(parseInt(window.location.hash.replace(/^$/, '#1').replace('#', ''), 10));
+
+            var titles = $('.project-title');de.log(titles.get(199));
+            var prev = titles.get(index-2-1) ? '← ' + $(titles.get(index-2-1)).text() : '';
+            var next = titles.get(index-2+1) ? $(titles.get(index-2+1)).text() + ' →' : '';
+            $('#page_control').attr('data-prev', prev);
+            $('#page_control').attr('data-next', next);
         },
         loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
         keyboard: true,                  // You can activate the keyboard controls
@@ -120,4 +127,6 @@ $(document).ready(function() {
     } else {
         controller.trigger('landOnPage');
     }
+
+    activateControls();
 });
