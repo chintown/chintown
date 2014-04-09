@@ -182,9 +182,11 @@
   }
   #page_control {
     background-color: @activated-control-color;
+    height: 2px;
   }
   #page_control::-webkit-slider-thumb {
-    -webkit-box-shadow: 0 0 1px 1px @activated-control-color;
+    //-webkit-box-shadow: 0 0 1px 1px @activated-control-color;
+    background-color: @activated-control-color;
     -webkit-animation: none;
   }
 }
