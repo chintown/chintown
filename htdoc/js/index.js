@@ -43,6 +43,7 @@ function initOnePageScrolling() {
         },
         afterMove: function(index) {     // This option accepts a callback function. The function will be called after the page moves.
             //de.time('afterMove', index);
+            $('#page_control').val(parseInt(window.location.hash.replace(/^$/, '#1').replace('#', ''), 10));
         },
         loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
         keyboard: true,                  // You can activate the keyboard controls
