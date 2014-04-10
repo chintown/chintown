@@ -6,6 +6,9 @@ function getCurrentPageFromHash() {
 function enableProjectPages() {
     $('.page').show();
 }
+function disableProjectPages() {
+    $('#controls').hide();
+}
 function enableControls() {
     $('#controls').show();
 }
@@ -144,14 +147,16 @@ function init() {
     de.time('INITIALIZATION DONE');
 }
 $(document).ready(function() {
+    disableProjectPages(); // avoid FOUC
+
     init();
 
-    enableProjectPages(); // avoid FOUC
     if (window.location.hash === '') {
         controller.trigger('landOnHome');
     } else {
         controller.trigger('landOnPage', getCurrentPageFromHash());
     }
+    enableProjectPages(); // avoid FOUC
 
     //activateControls();
 });
