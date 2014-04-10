@@ -90,6 +90,10 @@ function initMobilePageControl() {
         })
         .on('change touchmove', function() {
             var page = parseInt($(this).val(), 10); // starts from 1
+            if (page == getCurrentPageFromHash()) {
+                return;
+            }
+
             controller.trigger('switchToPage', page);
         })
         .on('touchstart', function () {
