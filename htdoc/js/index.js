@@ -158,5 +158,5 @@ $(document).ready(function() {
     }
     enableProjectPages(); // avoid FOUC
 
-    //activateControls();
+    //activateControls();//debug
 });
