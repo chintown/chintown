@@ -88,6 +88,10 @@ function initMobilePageControl() {
             var page = parseInt($(this).val(), 10); // starts from 1
             controller.trigger('switchToPage', page);
         })
+        .on('change touchmove', function() {
+            var page = parseInt($(this).val(), 10); // starts from 1
+            controller.trigger('switchToPage', page);
+        })
         .on('touchstart', function () {
             $('html').addClass('control-activated');
         })
