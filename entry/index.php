@@ -8,7 +8,7 @@
 
 <div id="index" class="">
     <div class="page" data-title="Mike Chen">
-        <div class="wrapper row-fluid">
+        <div id="main" class="wrapper row-fluid">
             <div class="span8 text-center">
                 <h1 id="name"><a href="<?=WEB_ROOT?>">Mike Chen</a></h1>
                 <p id="description">I make <a href="javascript:void(0)">homemade things</a> <br>and explore <a href="https://www.flickr.com/photos/chintown/sets/72157632408730031/">hidden joys</a>.</p>
