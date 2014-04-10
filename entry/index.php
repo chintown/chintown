@@ -35,6 +35,15 @@
     <?php
         }
     ?>
+
+    <div class="page" data-title="Contact Me">
+        <div id="contact" class="wrapper row-fluid text-center">
+            <h2 class="meta">Contact</h2>
+            <h4 class="text-left">map(lambda source:</h4>
+            <h4 class="text-center">'<em>chintown@</em>'+source,</h4>
+            <h4 class="text-right">['<em>gmail</em>', '<em>github</em>'])</h4>
+        </div>
+    </div>
 </div>
 
 <div id="controls">
