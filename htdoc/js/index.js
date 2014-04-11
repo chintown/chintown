@@ -10,7 +10,10 @@ function enableControls() {
     $('#controls').show();
 }
 function activateControls() {
-    $('html').addClass('control-activated');
+    $('body').addClass('control-activated');
+}
+function deactivateControls() {
+    $('body').removeClass('control-activated');
 }
 function updateNavigationHints(page) {
     var idx = page - 1;
@@ -18,8 +21,7 @@ function updateNavigationHints(page) {
     var prev = pages[idx - 1] ? '← ' + $(pages[idx - 1]).attr('data-title') : '';
     var next = pages[idx + 1] ? $(pages[idx + 1]).attr('data-title') + ' →' : '';
     var curr = $(pages[idx]).attr('data-title');
-    $('#page_control').attr('data-prev', prev);
-    $('#page_control').attr('data-next', next);
+    $('#page_control').attr('data-prev', prev).attr('data-next', next);
     $('#controls').attr('data-curr', curr);
 }
 // -----
@@ -27,26 +29,26 @@ function initModels() {
     window.controller = $.observable({});
 
     controller.on('landOnHome', function () {
-        if (IS_MOBILE) {
+        if (SHOULD_OVERRIDE_CONTROL) {
             enableControls();
             updateNavigationHints(1);
         }
     });
     controller.on('landOnPage', function (page) {
-        if (IS_MOBILE) {
+        if (SHOULD_OVERRIDE_CONTROL) {
             enableControls();
             updateNavigationHints(page);
         }
     });
     controller.on('enterProjects', function () {
-        if (IS_MOBILE) {
+        if (SHOULD_OVERRIDE_CONTROL) {
             activateControls();
         } else {
             $("#index").moveTo(2); // first project
         }
     });
     controller.on('switchToPage', function (page) { // starts from 1
-        if (IS_MOBILE) {
+        if (SHOULD_OVERRIDE_CONTROL) {
             updateNavigationHints(page);
             $("#index").moveTo(page);
         }
@@ -97,10 +99,10 @@ function initMobilePageControl() {
             controller.trigger('switchToPage', page);
         })
         .on('touchstart', function () {
-            $('html').addClass('control-activated');
+            activateControls();
         })
         .on('touchend', function () {
-            $('html').removeClass('control-activated');
+            deactivateControls();
         })
         ;
     $controls
@@ -111,7 +113,7 @@ function initMobilePageControl() {
             left: '10%' // horizontal_bar
         })
         ;
-    if (IS_MOBILE) {
+    if (SHOULD_OVERRIDE_CONTROL) {
         $('.onepage-pagination').hide();
     }
 }
@@ -131,7 +133,7 @@ function initMedia() {
 }
 function bindEvents() {
     de.time();
-    $('#description a:nth-child(1)').click(function() {
+    $('#description').find('a:nth-child(1)').click(function() {
         controller.trigger('enterProjects');
     });
 }
@@ -144,14 +146,12 @@ function init() {
     de.time('INITIALIZATION DONE');
 }
 $(document).ready(function() {
+    window.SHOULD_OVERRIDE_CONTROL = $('html').hasClass('touch');
     init();
-
     if (window.location.hash === '') {
         controller.trigger('landOnHome');
     } else {
         controller.trigger('landOnPage', getCurrentPageFromHash());
     }
     enableProjectPages(); // avoid FOUC
-
-    //activateControls();//debug
 });
