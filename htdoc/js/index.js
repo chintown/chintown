@@ -6,9 +6,6 @@ function getCurrentPageFromHash() {
 function enableProjectPages() {
     $('.page').show();
 }
-function disableProjectPages() {
-    $('#controls').hide();
-}
 function enableControls() {
     $('#controls').show();
 }
@@ -147,8 +144,6 @@ function init() {
     de.time('INITIALIZATION DONE');
 }
 $(document).ready(function() {
-    disableProjectPages(); // avoid FOUC
-
     init();
 
     if (window.location.hash === '') {

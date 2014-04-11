@@ -41,7 +41,9 @@
   max-width: 500px;
   width: auto;
 }
-
+.page {
+  display: none; // avoid FOUC
+}
 .page .wrapper {
   .l-center;
   max-height: 30%;
@@ -138,6 +140,9 @@
   }
 }
 
+#controls {
+  display: none;
+}
 #controls {
   position: fixed;
 
@@ -256,13 +261,4 @@
     color: black;
     font-style: normal;
   }
-}
-
-// -----------------------------------------------------------------------------
-// mobile initial
-.page {
-  display: none;
-}
-#controls {
-  display: none;
 }
