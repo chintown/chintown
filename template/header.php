@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
     <!-- <noscript><meta http-equiv="refresh" content="0;url=/nojs"></noscript> -->
-    <meta charset='UTF-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 <?php
@@ -26,8 +26,10 @@
     <link rel="stylesheet" href="<?=PARENT_WEB_PATH?>/css/bootstrap-responsive.precompile.css">
     <link rel="stylesheet" href="<?=PARENT_WEB_PATH?>/css/font-awesome.css">
     <!-- <link rel="stylesheet" href="--><?//=PARENT_WEB_PATH?><!--/css/webfont.alegreya.css"> -->
-    <link rel="stylesheet" href="<?=PARENT_WEB_PATH?>/css/webfont.cinzel.css">
-    <link rel="stylesheet" href="<?=PARENT_WEB_PATH?>/css/webfont.sortsmillgoudy.css">
+    <style type="text/css"><?
+        echo fix_font_css_path(file_get_contents("htdoc/css/webfont.cinzel.css", FILE_USE_INCLUDE_PATH));
+        echo fix_font_css_path(file_get_contents("htdoc/css/webfont.sortsmillgoudy.css", FILE_USE_INCLUDE_PATH));
+    ?></style>
     <script src="<?=PARENT_WEB_PATH?>/js/vendor/modernizr-2.6.1.min.js"></script>
   </head>
   <body class="<?=getBrowserUACSS()?>">
