@@ -19,6 +19,7 @@
     <title><?=$TITLE?></title>
     <meta name="description" content="<?=$DESCRIPTION?>"/>
 
+    <link rel="shortcut icon" href="<?=WEB_PATH?>/favicon.ico">
     <link rel="stylesheet" href="<?=$ENTRY_CSS?>">
     <link rel="stylesheet" href="<?=PARENT_WEB_PATH?>/css/reset.boilerplate.css">
     <!-- <link rel="stylesheet" href="--><?//=PARENT_WEB_PATH?><!--/css/bootstrap.css"> -->
