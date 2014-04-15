@@ -47,6 +47,8 @@
 </div>
 
 <div id="controls">
+    <div id="prev_title" hidden></div>
+    <div id="next_title" hidden></div>
     <input id="page_control" type="range" min="1"/>
 </div>
 

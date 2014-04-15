@@ -21,7 +21,9 @@ function updateNavigationHints(page) {
     var prev = pages[idx - 1] ? '← ' + $(pages[idx - 1]).attr('data-title') : '';
     var next = pages[idx + 1] ? $(pages[idx + 1]).attr('data-title') + ' →' : '';
     var curr = $(pages[idx]).attr('data-title');
-    $('#page_control').attr('data-prev', prev).attr('data-next', next);
+    //$('#page_control').attr('data-prev', prev).attr('data-next', next);
+    $('#prev_title').text(prev);
+    $('#next_title').text(next);
     $('#controls').attr('data-curr', curr);
 }
 // -----
