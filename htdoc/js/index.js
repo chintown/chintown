@@ -135,6 +135,9 @@ function bindEvents() {
     $('#description').find('a:nth-child(1)').click(function() {
         controller.trigger('enterProjects');
     });
+    $(window).resize(function () {
+        $('#page_control').css('width', $(window).width() * 0.8) // horizontal_bar
+    });
 }
 function init() {
     initModels();
