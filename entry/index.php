@@ -23,7 +23,7 @@
     ?>
     <div class="page" data-title="<?=$project['title']?>">
         <div class="wrapper row-fluid">
-            <?=(empty($project['url']) ? '' : '<a href="'.$project['url'].'">')?>
+            <?=(empty($project['url']) ? '' : '<a href="'.$project['url'].'" target="_blank">')?>
             <h2 class="project-title"><?=$project['title']?></h2>
             <?=(empty($project['url']) ? '' : '</a>')?>
             <h3 class="project-slogan"><small> — <?=$project['slogan']?></small></h3>
